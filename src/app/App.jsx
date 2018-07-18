@@ -1,14 +1,16 @@
 import React from 'react';
 
 import './app.css';
+
 import Header from '../header/Header';
+import ActivityList from '../activity-list/ActivityList';
 
 function App() {
   return (
     <div className="container">
       <Header />
       <div className="container-view">
-        Here display list of activities
+        <ActivityList />
       </div>
     </div>
   );

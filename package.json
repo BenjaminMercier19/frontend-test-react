@@ -8,13 +8,15 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
-    "lint": "eslint ."
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack --mode production"
   },
   "dependencies": {
+    "moment": "^2.22.2",
+    "prop-types": "^15.6.2",
     "react": "^16.3.1",
-    "react-dom": "^16.3.1"
+    "react-dom": "^16.3.1",
+    "react-icons": "^2.2.7"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

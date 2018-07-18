@@ -38,11 +38,16 @@ module.exports = {
   },
   output: {
     path: `${__dirname}/dist`,
-    publicPath: './',
+    publicPath: '/',
     filename: 'bundle.js',
   },
   devServer: {
-    contentBase: './dist',
+    contentBase: './public',
+    noInfo: true,
+    inline: true,
+    historyApiFallback: true,
+    host: '127.0.0.1',
+    port: '8081',
   },
   plugins: [
     new HtmlWebPackPlugin({
