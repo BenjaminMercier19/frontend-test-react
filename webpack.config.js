@@ -46,7 +46,7 @@ module.exports = {
     noInfo: true,
     inline: true,
     historyApiFallback: true,
-    host: '127.0.0.1',
+    host: 'localhost',
     port: '8081',
   },
   plugins: [
