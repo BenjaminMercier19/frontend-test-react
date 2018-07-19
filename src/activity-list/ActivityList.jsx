@@ -4,7 +4,7 @@ import moment from 'moment';
 import { groupByDate } from '../utils';
 import Activity from '../models/Activity';
 import ActivitiesByDate from './components/ActivitiesByDate';
-import Loader from '../loader/Loader';
+import Loader from '../shared-components/loader/Loader';
 
 import './activity-list.css';
 

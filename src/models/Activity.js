@@ -40,6 +40,12 @@ export default class Activity {
       .then(response => response.json())
       .then(activiesJson => activiesJson.map(activityJson => Activity.fromJson(activityJson)));
   }
+
+  static getById(id) {
+    return fetch(`https://aircall-job.herokuapp.com/activities/${id}`)
+      .then(response => response.json())
+      .then(activityJson => Activity.fromJson(activityJson));
+  }
 }
 
 export const ACTIVITY_DIRECTION = {

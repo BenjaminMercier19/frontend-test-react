@@ -1,9 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { MdInfo } from 'react-icons/lib/md';
+import moment from 'moment';
+import 'moment-duration-format';
+
+import ActivityDirection from '../../shared-components/activity-direction/ActivityDirection';
 
 import './activity.css';
-import ActivityDirection from './ActivityDirection';
 
 const propTypes = {
   activity: PropTypes.shape({
@@ -19,14 +23,9 @@ const propTypes = {
   }).isRequired,
 };
 
-class Activity extends React.Component {
-  componentDidMount() {
-
-  }
-
+class Activity extends React.PureComponent {
   render() {
     const { activity } = this.props;
-
     return (
       <div className="activity">
         <ActivityDirection
@@ -41,12 +40,12 @@ class Activity extends React.Component {
             {`Tried to call ${activity.to}`}
           </span>
           <span className="acitvity_duration">
-            {`during ${activity.duration} s`}
+            {`during ${moment.duration(Number(activity.duration), 'seconds').format('m [min], s [s]')} `}
           </span>
         </div>
-        <div className="activity_more-action">
+        <Link to={`/details/${activity.id}`} className="activity_more-action">
           <MdInfo />
-        </div>
+        </Link>
       </div>
     );
   }
